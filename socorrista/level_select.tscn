@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxy4phq2otc3d"]
+
+[node name="level_select" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 115.0
+offset_top = 255.0
+offset_right = 1065.0
+offset_bottom = 405.0
+theme_override_constants/separation = 50
+
+[node name="level1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level
+1"
+
+[node name="level2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level
+2"
+
+[node name="level3" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level
+3"
+
+[node name="level4" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level
+4"
+
+[node name="level5" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level
+5"
