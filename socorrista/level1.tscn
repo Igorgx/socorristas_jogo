@@ -4,16 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://dn5gw60io6vyc" path="res://sprites socorristas/braço estendido corte.png" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="1_v8kj3"]
 [ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="2_5j5gb"]
-[ext_resource type="Script" uid="uid://bco0sc3vm1nes" path="res://braço_machucado.gd" id="4_i2041"]
 [ext_resource type="Texture2D" uid="uid://dk3hhu0jlxh8j" path="res://sprites socorristas/alcool.png" id="4_v8kj3"]
 [ext_resource type="Script" uid="uid://d4lj4ox08chko" path="res://iten_1.gd" id="5_crycw"]
 [ext_resource type="Texture2D" uid="uid://0j3wptyx7erg" path="res://sprites socorristas/atadura.png" id="7_usj0q"]
 [ext_resource type="Texture2D" uid="uid://ciniweiwxla3d" path="res://sprites socorristas/pomada.png" id="9_mx85b"]
 
+[sub_resource type="GDScript" id="GDScript_xy4tn"]
+script/source = "extends Area2D
+
+func _input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		var level = get_tree().get_first_node_in_group(\"level_controller\")
+		if level:
+			if level.selected_item == level.item_correto:
+				print(\"✅ Usou o item correto:\", level.selected_item)
+				level.ir_para_proxima_cena()
+			elif level.selected_item != \"\":
+				print(\"❌ Item errado:\", level.selected_item)
+			else:
+				print(\"⚠️ Nenhum item selecionado.\")
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
 size = Vector2(479, 120)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_dopym")
 
 [node name="Cena" type="Sprite2D" parent="."]
 position = Vector2(573.9866, 324.3119)
@@ -22,10 +38,10 @@ scale = Vector2(4.2145452, 3.543039)
 texture = ExtResource("1_v8kj3")
 
 [node name="BemVindo" type="Label" parent="."]
-offset_left = 387.0
-offset_top = 12.0
-offset_right = 731.0
-offset_bottom = 89.0
+offset_left = 275.0
+offset_top = 5.0
+offset_right = 861.99994
+offset_bottom = 116.00003
 theme_override_font_sizes/font_size = 27
 text = "Level 1 : Braço Machucado
 "
@@ -39,17 +55,15 @@ texture = ExtResource("2_5j5gb")
 [node name="Intro1" type="Label" parent="."]
 offset_left = 400.0
 offset_top = 92.0
-offset_right = 754.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 18
+offset_right = 683.0
+offset_bottom = 167.0
 text = "Nosso paciente acaba de chegar!
 Devemos primeiro lavar o feriento ...
 "
-script = ExtResource("1_dopym")
 
 [node name="BraçoMachucado" type="Area2D" parent="."]
 position = Vector2(549, 303)
-script = ExtResource("4_i2041")
+script = SubResource("GDScript_xy4tn")
 
 [node name="Sprite2D" type="Sprite2D" parent="BraçoMachucado"]
 texture = ExtResource("1_jwv3a")
@@ -84,23 +98,27 @@ scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = 44
 alignment = 1
 
-[node name="Iten1" type="TextureButton" parent="UI/BarraItens"]
+[node name="Item1" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("4_v8kj3")
 script = ExtResource("5_crycw")
-item_name = "Alcool"
+item_name = "Álcool"
 
-[node name="Iten2" type="TextureButton" parent="UI/BarraItens"]
+[node name="Item2" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("7_usj0q")
 script = ExtResource("5_crycw")
-item_name = "Atadura"
+item_name = "Curativo"
 
-[node name="Iten3" type="TextureButton" parent="UI/BarraItens"]
+[node name="Item3" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("9_mx85b")
 script = ExtResource("5_crycw")
 item_name = "Pomada"
+
+[connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item3" to="." method="_on_item_3_pressed"]
