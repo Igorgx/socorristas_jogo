@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://be560xd61lt5s"]
+
+[ext_resource type="Script" uid="uid://cgjq33ro2ocou" path="res://nivel_finalizado.gd" id="1_rd57b"]
+
+[node name="NivelFinalizado" type="Node2D"]
+script = ExtResource("1_rd57b")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -70.5
+offset_right = 224.0
+offset_bottom = 70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "NÍVEL FINALIZADO
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 30.0
+offset_right = 35.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "VOLTAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
