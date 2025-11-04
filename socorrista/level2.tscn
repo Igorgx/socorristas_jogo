@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://djvkvnwad5l4x"]
+
+[ext_resource type="Script" uid="uid://cj5uobd2skoyy" path="res://level_2.gd" id="1_rmy57"]
+[ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_qulpo"]
+[ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="3_jifot"]
+[ext_resource type="Texture2D" uid="uid://b7kesqs7mly34" path="res://sprites socorristas/braço quebrado exposto.png" id="4_qulpo"]
+[ext_resource type="Script" uid="uid://d4lj4ox08chko" path="res://iten_1.gd" id="6_s8oj7"]
+[ext_resource type="Texture2D" uid="uid://0j3wptyx7erg" path="res://sprites socorristas/atadura.png" id="7_mw4xc"]
+[ext_resource type="Texture2D" uid="uid://ciniweiwxla3d" path="res://sprites socorristas/pomada.png" id="8_r8rrl"]
+[ext_resource type="Texture2D" uid="uid://bb54hvph7ppvx" path="res://sprites socorristas/tala.jpg" id="8_rmy57"]
+
+[sub_resource type="GDScript" id="GDScript_xy4tn"]
+script/source = "extends Area2D
+
+func _input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		var level = get_tree().get_first_node_in_group(\"level_controller\")
+		if level:
+			if level.selected_item == level.item_correto:
+				print(\"✅ Usou o item correto:\", level.selected_item)
+				level.ir_para_proxima_cena()
+			elif level.selected_item != \"\":
+				print(\"❌ Item errado:\", level.selected_item)
+			else:
+				print(\"⚠️ Nenhum item selecionado.\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
+size = Vector2(479, 120)
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_rmy57")
+
+[node name="Cena" type="Sprite2D" parent="."]
+position = Vector2(573.9866, 324.3119)
+rotation = 0.0011901151
+scale = Vector2(4.2145452, 3.543039)
+texture = ExtResource("2_qulpo")
+
+[node name="BemVindo" type="Label" parent="."]
+offset_left = 275.0
+offset_top = 5.0
+offset_right = 861.99994
+offset_bottom = 116.00003
+theme_override_font_sizes/font_size = 27
+text = "Level 2: Braço Quebrado
+"
+horizontal_alignment = 1
+
+[node name="BalaoTextoIntro1" type="Sprite2D" parent="."]
+position = Vector2(567.5, 142)
+scale = Vector2(1.4966668, 0.6466666)
+texture = ExtResource("3_jifot")
+
+[node name="Intro1" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 92.0
+offset_right = 683.0
+offset_bottom = 167.0
+text = "Nosso paciente está com o braço quebrado
+Primeiro devemos utilizar a atadura."
+
+[node name="BraçoMachucado" type="Area2D" parent="."]
+position = Vector2(549, 303)
+script = SubResource("GDScript_xy4tn")
+
+[node name="Sprite2D" type="Sprite2D" parent="BraçoMachucado"]
+texture = ExtResource("4_qulpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BraçoMachucado"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_i2041")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 242.0
+offset_top = 450.0
+offset_right = 856.0
+offset_bottom = 641.0
+
+[node name="BarraItens" type="HBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -141.0
+offset_right = 723.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 44
+alignment = 1
+
+[node name="Item1" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("6_s8oj7")
+item_name = "Álcool"
+
+[node name="Item2" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("7_mw4xc")
+script = ExtResource("6_s8oj7")
+item_name = "Curativo"
+
+[node name="Item3" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("8_r8rrl")
+stretch_mode = 0
+script = ExtResource("6_s8oj7")
+item_name = "Pomada"
+
+[node name="Tala" type="Sprite2D" parent="UI/BarraItens"]
+position = Vector2(758.00006, 116.00001)
+scale = Vector2(0.71666634, 0.64444447)
+texture = ExtResource("8_rmy57")
+
+[connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item3" to="." method="_on_item_3_pressed"]
