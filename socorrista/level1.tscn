@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dipbulhkkv6oc"]
+[gd_scene load_steps=13 format=3 uid="uid://dipbulhkkv6oc"]
 
 [ext_resource type="Script" uid="uid://bbfntp2gaouyn" path="res://level1.gd" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://dn5gw60io6vyc" path="res://sprites socorristas/braço estendido corte.png" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="1_v8kj3"]
 [ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="2_5j5gb"]
-[ext_resource type="Texture2D" uid="uid://dk3hhu0jlxh8j" path="res://sprites socorristas/alcool.png" id="4_v8kj3"]
 [ext_resource type="Script" uid="uid://d4lj4ox08chko" path="res://iten_1.gd" id="5_crycw"]
-[ext_resource type="Texture2D" uid="uid://0j3wptyx7erg" path="res://sprites socorristas/atadura.png" id="7_usj0q"]
-[ext_resource type="Texture2D" uid="uid://ciniweiwxla3d" path="res://sprites socorristas/pomada.png" id="9_mx85b"]
+[ext_resource type="Texture2D" uid="uid://c33lerbuvl03w" path="res://sprites socorristas/fundovermelho.png" id="5_usj0q"]
+[ext_resource type="Texture2D" uid="uid://bayuvfvm2fadm" path="res://sprites socorristas/alcool-Photoroom.png" id="6_5j5gb"]
+[ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="8_mx85b"]
+[ext_resource type="Texture2D" uid="uid://cw4uo7x0so04w" path="res://sprites socorristas/pomada sem fundo.png" id="9_hx44q"]
+[ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="10_5j5gb"]
 
 [sub_resource type="GDScript" id="GDScript_xy4tn"]
 script/source = "extends Area2D
@@ -37,22 +39,31 @@ rotation = 0.0011901151
 scale = Vector2(4.2145452, 3.543039)
 texture = ExtResource("1_v8kj3")
 
+[node name="MsgErro" type="Label" parent="."]
+visible = false
+offset_left = 961.0
+offset_top = 11.0
+offset_right = 1094.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.81738645, 0, 0.0071710967, 1)
+
 [node name="BemVindo" type="Label" parent="."]
 offset_left = 275.0
 offset_top = 5.0
 offset_right = 861.99994
 offset_bottom = 116.00003
+theme_override_colors/font_color = Color(0.87058824, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "Level 1 : Braço Machucado
 "
 horizontal_alignment = 1
 
-[node name="BalaoTextoIntro1" type="Sprite2D" parent="."]
+[node name="BalaoTextoIntro" type="Sprite2D" parent="."]
 position = Vector2(558, 142.00002)
 scale = Vector2(1.3133335, 0.6)
 texture = ExtResource("2_5j5gb")
 
-[node name="Intro1" type="Label" parent="."]
+[node name="Intro" type="Label" parent="."]
 offset_left = 400.0
 offset_top = 92.0
 offset_right = 683.0
@@ -71,6 +82,11 @@ texture = ExtResource("1_jwv3a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BraçoMachucado"]
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_i2041")
+
+[node name="Fundovermelho" type="Sprite2D" parent="."]
+position = Vector2(573.50006, 547.5)
+scale = Vector2(1.851438, 0.64856225)
+texture = ExtResource("5_usj0q")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -101,24 +117,31 @@ alignment = 1
 [node name="Item1" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("4_v8kj3")
+texture_normal = ExtResource("6_5j5gb")
 script = ExtResource("5_crycw")
 item_name = "Álcool"
 
 [node name="Item2" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("7_usj0q")
+texture_normal = ExtResource("8_mx85b")
 script = ExtResource("5_crycw")
 item_name = "Curativo"
 
 [node name="Item3" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("9_mx85b")
+texture_normal = ExtResource("9_hx44q")
 script = ExtResource("5_crycw")
 item_name = "Pomada"
+
+[node name="Home" type="TextureButton" parent="."]
+offset_right = 350.0
+offset_bottom = 350.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_5j5gb")
 
 [connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
 [connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]
 [connection signal="pressed" from="UI/BarraItens/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_texture_button_pressed"]

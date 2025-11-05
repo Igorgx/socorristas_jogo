@@ -1,15 +1,170 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxy4phq2otc3d"]
+[gd_scene load_steps=38 format=3 uid="uid://dxy4phq2otc3d"]
 
 [ext_resource type="Script" uid="uid://4x5j14eayoiq" path="res://level_select.gd" id="1_il3u1"]
+[ext_resource type="Texture2D" uid="uid://27v58dacuhb6" path="res://sprites socorristas/background/frame_00_delay-0.07s.png" id="2_vuyhu"]
+[ext_resource type="Texture2D" uid="uid://b035oxuc7mq33" path="res://sprites socorristas/background/frame_01_delay-0.03s.png" id="3_mlvvq"]
+[ext_resource type="Texture2D" uid="uid://bna8ef6wnqcds" path="res://sprites socorristas/background/frame_02_delay-0.03s.png" id="4_jkqmq"]
+[ext_resource type="Texture2D" uid="uid://b3i4kfwxxlt6y" path="res://sprites socorristas/background/frame_03_delay-0.04s.png" id="5_f5x0p"]
+[ext_resource type="Texture2D" uid="uid://dc21l6ki670by" path="res://sprites socorristas/background/frame_04_delay-0.03s.png" id="6_mi6s0"]
+[ext_resource type="Texture2D" uid="uid://di3f66hhc5jk8" path="res://sprites socorristas/background/frame_05_delay-0.07s.png" id="7_s5ejt"]
+[ext_resource type="Texture2D" uid="uid://d85se0wum2pw" path="res://sprites socorristas/background/frame_06_delay-0.03s.png" id="8_vh4c3"]
+[ext_resource type="Texture2D" uid="uid://thci0usxo3tk" path="res://sprites socorristas/background/frame_07_delay-0.03s.png" id="9_wu3qw"]
+[ext_resource type="Texture2D" uid="uid://ppe0nrdx034g" path="res://sprites socorristas/background/frame_08_delay-0.04s.png" id="10_71vd2"]
+[ext_resource type="Texture2D" uid="uid://dceo8m1bklme8" path="res://sprites socorristas/background/frame_09_delay-0.03s.png" id="11_vl0pf"]
+[ext_resource type="Texture2D" uid="uid://ckrpmobxrfvh6" path="res://sprites socorristas/background/frame_10_delay-0.03s.png" id="12_1k1ba"]
+[ext_resource type="Texture2D" uid="uid://cqdm8tom00td2" path="res://sprites socorristas/background/frame_11_delay-0.04s.png" id="13_2criu"]
+[ext_resource type="Texture2D" uid="uid://diqqwvx1xvkvp" path="res://sprites socorristas/background/frame_12_delay-0.03s.png" id="14_2b1qu"]
+[ext_resource type="Texture2D" uid="uid://71h3c7pwgswd" path="res://sprites socorristas/background/frame_13_delay-0.03s.png" id="15_6vn66"]
+[ext_resource type="Texture2D" uid="uid://b0n33vt5nanl1" path="res://sprites socorristas/background/frame_14_delay-0.04s.png" id="16_qcumt"]
+[ext_resource type="Texture2D" uid="uid://lr0e6xoivm1q" path="res://sprites socorristas/background/frame_15_delay-0.03s.png" id="17_muphr"]
+[ext_resource type="Texture2D" uid="uid://dpw1epplgwskp" path="res://sprites socorristas/background/frame_16_delay-0.07s.png" id="18_hmyr8"]
+[ext_resource type="Texture2D" uid="uid://p773my710mgg" path="res://sprites socorristas/background/frame_17_delay-0.03s.png" id="19_gdmsb"]
+[ext_resource type="Texture2D" uid="uid://cfmtc8pmog0bq" path="res://sprites socorristas/background/frame_18_delay-0.03s.png" id="20_1ckm3"]
+[ext_resource type="Texture2D" uid="uid://bo6gdpmc38o00" path="res://sprites socorristas/background/frame_19_delay-0.04s.png" id="21_y70ql"]
+[ext_resource type="Texture2D" uid="uid://ochxw3tmguuk" path="res://sprites socorristas/background/frame_20_delay-0.03s.png" id="22_kes8t"]
+[ext_resource type="Texture2D" uid="uid://dhgjdnppg4ynp" path="res://sprites socorristas/background/frame_21_delay-0.07s.png" id="23_g1ies"]
+[ext_resource type="Texture2D" uid="uid://bbabrg4ftu26s" path="res://sprites socorristas/background/frame_22_delay-0.03s.png" id="24_huht4"]
+[ext_resource type="Texture2D" uid="uid://cwjnaksyjsmhe" path="res://sprites socorristas/background/frame_23_delay-0.07s.png" id="25_174ha"]
+[ext_resource type="Texture2D" uid="uid://bsoys1fyrfil1" path="res://sprites socorristas/background/frame_24_delay-0.06s.png" id="26_yfgok"]
+[ext_resource type="Texture2D" uid="uid://brlwq18s2kd4f" path="res://sprites socorristas/background/frame_25_delay-0.07s.png" id="27_p27rr"]
+[ext_resource type="Texture2D" uid="uid://b5v1sbgw0cyg" path="res://sprites socorristas/background/frame_26_delay-0.07s.png" id="28_e0jmm"]
+[ext_resource type="Texture2D" uid="uid://dqbkbxx8aqhn1" path="res://sprites socorristas/background/frame_27_delay-0.03s.png" id="29_nl0yb"]
+[ext_resource type="Texture2D" uid="uid://dusycjpwcfb4w" path="res://sprites socorristas/background/frame_28_delay-0.07s.png" id="30_b1d7f"]
+[ext_resource type="Texture2D" uid="uid://cng5dnnl47j2c" path="res://sprites socorristas/background/frame_29_delay-0.06s.png" id="31_knrm1"]
+[ext_resource type="Texture2D" uid="uid://dl6t1rr0qium1" path="res://sprites socorristas/background/frame_30_delay-0.07s.png" id="32_vevkx"]
+[ext_resource type="Texture2D" uid="uid://bpmy32hl6df3" path="res://sprites socorristas/background/frame_31_delay-0.07s.png" id="33_fh5kc"]
+[ext_resource type="Texture2D" uid="uid://dmoxy05lwwknp" path="res://sprites socorristas/background/frame_32_delay-0.03s.png" id="34_0bnwo"]
+[ext_resource type="Texture2D" uid="uid://b8q7iwoauqafp" path="res://sprites socorristas/background/frame_33_delay-0.07s.png" id="35_oh0bb"]
+[ext_resource type="Texture2D" uid="uid://dh5qroy4peaw7" path="res://sprites socorristas/background/frame_34_delay-5.46s.png" id="36_k47or"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gslmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuyhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mlvvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jkqmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f5x0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mi6s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s5ejt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vh4c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wu3qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_71vd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vl0pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1k1ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2criu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2b1qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6vn66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qcumt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_muphr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hmyr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gdmsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1ckm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_y70ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kes8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_g1ies")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_huht4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_174ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_yfgok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_p27rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_e0jmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nl0yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_b1d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_knrm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_vevkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_fh5kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0bnwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_oh0bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_k47or")
+}],
+"loop": true,
+"name": &"animacao",
+"speed": 20.0
+}]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource("1_il3u1")
 
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 322)
+sprite_frames = SubResource("SpriteFrames_gslmc")
+animation = &"animacao"
+autoplay = "animacao"
+frame_progress = 0.5306757
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 115.0
-offset_top = 255.0
-offset_right = 1065.0
-offset_bottom = 405.0
+offset_left = 104.0
+offset_top = 253.0
+offset_right = 1054.0
+offset_bottom = 403.0
 theme_override_constants/separation = 50
 
 [node name="Level1" type="Button" parent="HBoxContainer"]
@@ -48,3 +203,6 @@ text = "Level
 5"
 
 [connection signal="pressed" from="HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/level4" to="." method="_on_level_4_pressed"]

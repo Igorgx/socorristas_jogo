@@ -1,36 +1,194 @@
-[gd_scene load_steps=2 format=3 uid="uid://bri3e0pk58yse"]
+[gd_scene load_steps=38 format=3 uid="uid://bri3e0pk58yse"]
 
 [ext_resource type="Script" uid="uid://t3o87mkyckmi" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://27v58dacuhb6" path="res://sprites socorristas/background/frame_00_delay-0.07s.png" id="2_swr0i"]
+[ext_resource type="Texture2D" uid="uid://b035oxuc7mq33" path="res://sprites socorristas/background/frame_01_delay-0.03s.png" id="3_2urq5"]
+[ext_resource type="Texture2D" uid="uid://bna8ef6wnqcds" path="res://sprites socorristas/background/frame_02_delay-0.03s.png" id="4_ix6bv"]
+[ext_resource type="Texture2D" uid="uid://b3i4kfwxxlt6y" path="res://sprites socorristas/background/frame_03_delay-0.04s.png" id="5_2kjvi"]
+[ext_resource type="Texture2D" uid="uid://dc21l6ki670by" path="res://sprites socorristas/background/frame_04_delay-0.03s.png" id="6_kvjq3"]
+[ext_resource type="Texture2D" uid="uid://di3f66hhc5jk8" path="res://sprites socorristas/background/frame_05_delay-0.07s.png" id="7_h1gbt"]
+[ext_resource type="Texture2D" uid="uid://d85se0wum2pw" path="res://sprites socorristas/background/frame_06_delay-0.03s.png" id="8_km3bq"]
+[ext_resource type="Texture2D" uid="uid://thci0usxo3tk" path="res://sprites socorristas/background/frame_07_delay-0.03s.png" id="9_7r7u4"]
+[ext_resource type="Texture2D" uid="uid://ppe0nrdx034g" path="res://sprites socorristas/background/frame_08_delay-0.04s.png" id="10_gqv7n"]
+[ext_resource type="Texture2D" uid="uid://dceo8m1bklme8" path="res://sprites socorristas/background/frame_09_delay-0.03s.png" id="11_hkf1x"]
+[ext_resource type="Texture2D" uid="uid://ckrpmobxrfvh6" path="res://sprites socorristas/background/frame_10_delay-0.03s.png" id="12_e64eg"]
+[ext_resource type="Texture2D" uid="uid://cqdm8tom00td2" path="res://sprites socorristas/background/frame_11_delay-0.04s.png" id="13_wh67g"]
+[ext_resource type="Texture2D" uid="uid://diqqwvx1xvkvp" path="res://sprites socorristas/background/frame_12_delay-0.03s.png" id="14_v2pes"]
+[ext_resource type="Texture2D" uid="uid://71h3c7pwgswd" path="res://sprites socorristas/background/frame_13_delay-0.03s.png" id="15_cy76q"]
+[ext_resource type="Texture2D" uid="uid://b0n33vt5nanl1" path="res://sprites socorristas/background/frame_14_delay-0.04s.png" id="16_w3tfb"]
+[ext_resource type="Texture2D" uid="uid://lr0e6xoivm1q" path="res://sprites socorristas/background/frame_15_delay-0.03s.png" id="17_dfeea"]
+[ext_resource type="Texture2D" uid="uid://dpw1epplgwskp" path="res://sprites socorristas/background/frame_16_delay-0.07s.png" id="18_kojkm"]
+[ext_resource type="Texture2D" uid="uid://p773my710mgg" path="res://sprites socorristas/background/frame_17_delay-0.03s.png" id="19_m3v73"]
+[ext_resource type="Texture2D" uid="uid://cfmtc8pmog0bq" path="res://sprites socorristas/background/frame_18_delay-0.03s.png" id="20_ivaxt"]
+[ext_resource type="Texture2D" uid="uid://bo6gdpmc38o00" path="res://sprites socorristas/background/frame_19_delay-0.04s.png" id="21_ia58x"]
+[ext_resource type="Texture2D" uid="uid://ochxw3tmguuk" path="res://sprites socorristas/background/frame_20_delay-0.03s.png" id="22_f6p64"]
+[ext_resource type="Texture2D" uid="uid://dhgjdnppg4ynp" path="res://sprites socorristas/background/frame_21_delay-0.07s.png" id="23_1gtdl"]
+[ext_resource type="Texture2D" uid="uid://bbabrg4ftu26s" path="res://sprites socorristas/background/frame_22_delay-0.03s.png" id="24_nbjkp"]
+[ext_resource type="Texture2D" uid="uid://cwjnaksyjsmhe" path="res://sprites socorristas/background/frame_23_delay-0.07s.png" id="25_h1kn2"]
+[ext_resource type="Texture2D" uid="uid://bsoys1fyrfil1" path="res://sprites socorristas/background/frame_24_delay-0.06s.png" id="26_vcx4h"]
+[ext_resource type="Texture2D" uid="uid://brlwq18s2kd4f" path="res://sprites socorristas/background/frame_25_delay-0.07s.png" id="27_g470i"]
+[ext_resource type="Texture2D" uid="uid://b5v1sbgw0cyg" path="res://sprites socorristas/background/frame_26_delay-0.07s.png" id="28_03cms"]
+[ext_resource type="Texture2D" uid="uid://dqbkbxx8aqhn1" path="res://sprites socorristas/background/frame_27_delay-0.03s.png" id="29_t11nb"]
+[ext_resource type="Texture2D" uid="uid://dusycjpwcfb4w" path="res://sprites socorristas/background/frame_28_delay-0.07s.png" id="30_r2a3d"]
+[ext_resource type="Texture2D" uid="uid://cng5dnnl47j2c" path="res://sprites socorristas/background/frame_29_delay-0.06s.png" id="31_h83cl"]
+[ext_resource type="Texture2D" uid="uid://dl6t1rr0qium1" path="res://sprites socorristas/background/frame_30_delay-0.07s.png" id="32_jkke2"]
+[ext_resource type="Texture2D" uid="uid://bpmy32hl6df3" path="res://sprites socorristas/background/frame_31_delay-0.07s.png" id="33_80ept"]
+[ext_resource type="Texture2D" uid="uid://dmoxy05lwwknp" path="res://sprites socorristas/background/frame_32_delay-0.03s.png" id="34_cs3jf"]
+[ext_resource type="Texture2D" uid="uid://b8q7iwoauqafp" path="res://sprites socorristas/background/frame_33_delay-0.07s.png" id="35_g7l3v"]
+[ext_resource type="Texture2D" uid="uid://dh5qroy4peaw7" path="res://sprites socorristas/background/frame_34_delay-5.46s.png" id="36_1gaup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kduks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_swr0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2urq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ix6bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2kjvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvjq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h1gbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_km3bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7r7u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gqv7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hkf1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e64eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wh67g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_v2pes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cy76q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w3tfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dfeea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kojkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m3v73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ivaxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ia58x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f6p64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1gtdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nbjkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h1kn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vcx4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_g470i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_03cms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_t11nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_r2a3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_h83cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jkke2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_80ept")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cs3jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_g7l3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1gaup")
+}],
+"loop": true,
+"name": &"animacao",
+"speed": 20.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_06t4h")
 
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 328)
+sprite_frames = SubResource("SpriteFrames_kduks")
+animation = &"animacao"
+autoplay = "animacao"
+frame_progress = 0.36213276
+
 [node name="Label" type="Label" parent="."]
-offset_left = 462.0
-offset_top = 3.0
-offset_right = 730.0
-offset_bottom = 72.0
-theme_override_font_sizes/font_size = 50
+offset_left = 400.0
+offset_top = 69.0
+offset_right = 775.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 70
 text = "Socorristas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 462.0
-offset_top = 204.0
-offset_right = 730.0
-offset_bottom = 648.0
+offset_left = 449.0
+offset_top = 270.0
+offset_right = 717.0
+offset_bottom = 714.0
 
 [node name="Jogar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Jogar"
 
 [node name="Opcoes" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Opções"
 
 [node name="sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
