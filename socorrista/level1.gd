@@ -16,11 +16,11 @@ func _process(delta):
 		match estado:
 			
 			1:
-				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/braço quebrado x ray.png")
+				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/Braco corte sem sangue.png")
 				$Intro.text = "Otimo, agora vamos passar a\npomada no ferimento..."
 			2:
-				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/braço quebrado x ray.png")
-				$Intro.text = "Excelente! Agora vamos enfaixar o\nobraço para concluir..."
+				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/Braco com pomada.png")
+				$Intro.text = "Excelente! Agora vamos enfaixar o\nbraço para concluir..."
 			3:
 				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/braço estendido bandagens.png")
 				$Intro.text = "Ótimo trabalho, paciente liberado!"
