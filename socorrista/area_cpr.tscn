@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cabg3emwb1353"]
+
+[ext_resource type="Script" uid="uid://de7ppulcj7dob" path="res://area_cpr.gd" id="1_lylqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oi7y"]
+size = Vector2(9, 40)
+
+[node name="areaCPR" type="Node2D"]
+script = ExtResource("1_lylqj")
+
+[node name="teste" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teste"]
+position = Vector2(4.5, 20)
+shape = SubResource("RectangleShape2D_4oi7y")
+
+[node name="ColorRect" type="ColorRect" parent="teste"]
+offset_right = 10.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

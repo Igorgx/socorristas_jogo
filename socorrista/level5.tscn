@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0llnr2edrcnw"]
+
+[ext_resource type="Script" uid="uid://vqkpcbhevon6" path="res://level_5.gd" id="1_bf6rn"]
+[ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="1_t4tfv"]
+[ext_resource type="Texture2D" uid="uid://cpfr50kg0aqux" path="res://sprites socorristas/cprbegin.png" id="2_bf6rn"]
+[ext_resource type="Texture2D" uid="uid://by6pvj64ir6yk" path="res://sprites socorristas/coracao.png" id="3_qmr0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2odi"]
+size = Vector2(165, 111.111145)
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_bf6rn")
+
+[node name="Cena" type="Sprite2D" parent="."]
+position = Vector2(578.5, 323)
+scale = Vector2(4.192727, 3.5300548)
+texture = ExtResource("1_t4tfv")
+
+[node name="Cprbegin" type="Sprite2D" parent="."]
+position = Vector2(589, 409)
+texture = ExtResource("2_bf6rn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 969.0
+offset_top = 15.0
+offset_right = 1009.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="pista" type="ColorRect" parent="."]
+offset_left = 196.0
+offset_top = 449.0
+offset_right = 969.0
+offset_bottom = 489.0
+color = Color(1, 1, 1, 0.4745098)
+
+[node name="area_coracao" type="Area2D" parent="pista"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pista/area_coracao"]
+position = Vector2(774, 20)
+scale = Vector2(0.4, 0.36)
+shape = SubResource("RectangleShape2D_x2odi")
+
+[node name="Coracao" type="Sprite2D" parent="pista/area_coracao"]
+position = Vector2(776, 11)
+scale = Vector2(0.4, 0.36)
+texture = ExtResource("3_qmr0j")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="pista/area_coracao" to="." method="_on_area_coracao_area_entered"]
+[connection signal="area_exited" from="pista/area_coracao" to="." method="_on_area_coracao_area_exited"]
