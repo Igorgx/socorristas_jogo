@@ -2,6 +2,8 @@ extends Node2D
 
 @export var item_correto: String = ""
 @export var estado: int = 0
+@onready var sucesso: AudioStreamPlayer = $Sucesso
+@onready var errado: AudioStreamPlayer = $Errado
 
 var selected_item: String = ""
 var estado_anterior: int = -1
@@ -45,8 +47,10 @@ func ver_se_certo(item: String):
 			estado += 1
 			$MsgErro.visible = false
 			erro_visivel = false
+			sucesso.play()
 		else:
 			mostrar_erro("  Item incorreto!\nTente novamente.")
+			errado.play()
 
 
 func mostrar_erro(msg: String):

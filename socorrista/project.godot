@@ -14,3 +14,7 @@ config/name="Socorrista"
 run/main_scene="uid://bri3e0pk58yse"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackgroundMusic="*res://background_music.tscn"

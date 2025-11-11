@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://byq2gyo7kg1eu"]
+
+[ext_resource type="AudioStream" uid="uid://pkdf5d87jnfr" path="res://sprites socorristas/sound/jazz background.mp3" id="1_4m5bw"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_4m5bw")
+autoplay = true

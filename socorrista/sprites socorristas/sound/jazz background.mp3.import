@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pkdf5d87jnfr"
+path="res://.godot/imported/jazz background.mp3-bc9e63ce1484d73667e8e09b809183a7.mp3str"
+
+[deps]
+
+source_file="res://sprites socorristas/sound/jazz background.mp3"
+dest_files=["res://.godot/imported/jazz background.mp3-bc9e63ce1484d73667e8e09b809183a7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,156 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfxa8qxegwhsf"]
+
+[ext_resource type="Script" uid="uid://crr503f620vgv" path="res://level_2.gd" id="1_rmy57"]
+[ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_qulpo"]
+[ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="3_jifot"]
+[ext_resource type="Texture2D" uid="uid://b7kesqs7mly34" path="res://sprites socorristas/braço quebrado exposto.png" id="4_qulpo"]
+[ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="6_8i3m3"]
+[ext_resource type="Script" uid="uid://d4lj4ox08chko" path="res://iten_1.gd" id="6_s8oj7"]
+[ext_resource type="Texture2D" uid="uid://bihvvxll078sr" path="res://sprites socorristas/tala_225.png" id="7_rmy57"]
+[ext_resource type="Texture2D" uid="uid://c33lerbuvl03w" path="res://sprites socorristas/fundovermelho.png" id="8_qulpo"]
+[ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="8_rmy57"]
+[ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="10_3opl0"]
+[ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_dc5vx"]
+
+[sub_resource type="GDScript" id="GDScript_xy4tn"]
+script/source = "extends Area2D
+
+func _input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		var level = get_tree().get_first_node_in_group(\"level_controller\")
+		if level:
+			if level.selected_item == level.item_correto:
+				print(\"✅ Usou o item correto:\", level.selected_item)
+				level.ir_para_proxima_cena()
+			elif level.selected_item != \"\":
+				print(\"❌ Item errado:\", level.selected_item)
+			else:
+				print(\"⚠️ Nenhum item selecionado.\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
+size = Vector2(479, 120)
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_rmy57")
+
+[node name="Cena" type="Sprite2D" parent="."]
+position = Vector2(573.9866, 324.3119)
+rotation = 0.0011901151
+scale = Vector2(4.2145452, 3.543039)
+texture = ExtResource("2_qulpo")
+
+[node name="BemVindo" type="Label" parent="."]
+offset_left = 275.0
+offset_top = 5.0
+offset_right = 861.99994
+offset_bottom = 116.00003
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Level 2: Braço Quebrado
+"
+horizontal_alignment = 1
+
+[node name="BalaoTextoIntro" type="Sprite2D" parent="."]
+position = Vector2(567.5, 142)
+scale = Vector2(1.4966668, 0.6466666)
+texture = ExtResource("3_jifot")
+
+[node name="Intro" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 92.0
+offset_right = 683.0
+offset_bottom = 167.0
+text = "Nosso paciente está com o braço quebrado
+Primeiro devemos utilizar a bandagem."
+
+[node name="BraçoMachucado" type="Area2D" parent="."]
+position = Vector2(549, 303)
+script = SubResource("GDScript_xy4tn")
+
+[node name="Sprite2D" type="Sprite2D" parent="BraçoMachucado"]
+texture = ExtResource("4_qulpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BraçoMachucado"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_i2041")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 242.0
+offset_top = 450.0
+offset_right = 856.0
+offset_bottom = 641.0
+
+[node name="BarraItens" type="HBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -141.0
+offset_right = 723.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 44
+alignment = 1
+
+[node name="Item1" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("6_8i3m3")
+script = ExtResource("6_s8oj7")
+item_name = "Bandagem"
+
+[node name="Item2" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("6_s8oj7")
+item_name = "Tala"
+
+[node name="Item3" type="TextureButton" parent="UI/BarraItens"]
+custom_minimum_size = Vector2(225, 225)
+layout_mode = 2
+texture_normal = ExtResource("7_rmy57")
+stretch_mode = 0
+script = ExtResource("6_s8oj7")
+item_name = "Tala"
+
+[node name="Fundovermelho" type="Sprite2D" parent="UI/BarraItens"]
+show_behind_parent = true
+position = Vector2(523.0001, 95)
+scale = Vector2(3.702876, 1.2971245)
+texture = ExtResource("8_qulpo")
+
+[node name="Home" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 358.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_rmy57")
+
+[node name="MsgErro" type="Label" parent="."]
+visible = false
+offset_left = 1236.0
+offset_top = 16.0
+offset_right = 1369.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.81738645, 0, 0.0071710967, 1)
+
+[node name="Errado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3opl0")
+
+[node name="Sucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dc5vx")
+
+[connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="UI/BarraItens/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

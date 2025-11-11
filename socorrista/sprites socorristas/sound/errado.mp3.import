@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b50e6cjpls5qx"
+path="res://.godot/imported/errado.mp3-ecadf46a6f7911a1942bca934019f54b.mp3str"
+
+[deps]
+
+source_file="res://sprites socorristas/sound/errado.mp3"
+dest_files=["res://.godot/imported/errado.mp3-ecadf46a6f7911a1942bca934019f54b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

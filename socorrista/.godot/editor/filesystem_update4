@@ -1,4 +1,6 @@
-res://level_select.gd
-res://level_select.tscn
+res://level2.tscn
 res://level1.tscn
-res://main_menu.tscn
+res://level_2.gd
+res://level1.gd
+res://level3_scene.tscn
+res://level_3_scene.gd

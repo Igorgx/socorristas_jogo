@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dipbulhkkv6oc"]
+[gd_scene load_steps=15 format=3 uid="uid://dipbulhkkv6oc"]
 
 [ext_resource type="Script" uid="uid://bbfntp2gaouyn" path="res://level1.gd" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://dn5gw60io6vyc" path="res://sprites socorristas/braço estendido corte.png" id="1_jwv3a"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="8_mx85b"]
 [ext_resource type="Texture2D" uid="uid://cw4uo7x0so04w" path="res://sprites socorristas/pomada sem fundo.png" id="9_hx44q"]
 [ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="10_5j5gb"]
+[ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_hx44q"]
+[ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="12_n8vhr"]
 
 [sub_resource type="GDScript" id="GDScript_xy4tn"]
 script/source = "extends Area2D
@@ -140,6 +142,13 @@ offset_right = 350.0
 offset_bottom = 350.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("10_5j5gb")
+
+[node name="Sucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hx44q")
+volume_db = 1.0
+
+[node name="Errado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_n8vhr")
 
 [connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
 [connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]

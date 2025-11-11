@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cihac584x212b"]
+[gd_scene load_steps=12 format=3 uid="uid://cihac584x212b"]
 
 [ext_resource type="Script" uid="uid://c5dwnr38kwynh" path="res://level_3_scene.gd" id="1_a3ucm"]
 [ext_resource type="Texture2D" uid="uid://dikq5ihbvjpky" path="res://sprites socorristas/braço queimadura.png" id="2_4rhww"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ciniweiwxla3d" path="res://sprites socorristas/pomada.png" id="7_8diw4"]
 [ext_resource type="Texture2D" uid="uid://bu1hilfytchdi" path="res://sprites socorristas/braço estendido.png" id="8_8diw4"]
 [ext_resource type="Texture2D" uid="uid://cdd2h4yr4w8qv" path="res://sprites socorristas/braço estendido bandagens.png" id="9_qa20f"]
+[ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="10_b1iar"]
+[ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_mble2"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(580, 280)
@@ -97,6 +99,12 @@ texture = ExtResource("8_8diw4")
 [node name="BracoAtadura" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("9_qa20f")
+
+[node name="Errado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_b1iar")
+
+[node name="Sucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_mble2")
 
 [connection signal="pressed" from="Itens_Conteiner/Button_Agua" to="." method="_on_button_agua_pressed"]
 [connection signal="pressed" from="Itens_Conteiner/Button_Alcool" to="." method="_on_button_alcool_pressed"]

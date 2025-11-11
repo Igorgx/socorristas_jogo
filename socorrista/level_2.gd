@@ -1,0 +1,74 @@
+extends Node2D
+
+@export var item_correto: String = ""
+@export var estado: int = 0
+@onready var errado: AudioStreamPlayer = $Errado
+@onready var sucesso: AudioStreamPlayer = $Sucesso
+
+var selected_item: String = ""
+var estado_anterior: int = -1
+var erro_timer := 0.0
+var erro_visivel := false
+
+
+func _process(delta):
+	if estado != estado_anterior:
+		estado_anterior = estado
+
+		match estado:
+			
+			1:
+				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/braço_bandagem.png")
+				$Intro.text = "Ótimo, agora vamos estabilizar o braço\n quebrado..."
+			2:
+				$BraçoMachucado/Sprite2D.texture = load("res://sprites socorristas/braço_tala.png")
+				$Intro.text = "Excelente! Agora o braço está estabilizado e\n enfaixado. Paciente liberado!"
+
+	# Se a mensagem de erro estiver visível, conta o tempo e some depois de 2 segundos
+	if erro_visivel:
+		erro_timer -= delta
+		if erro_timer <= 0:
+			erro_visivel = false
+			$MsgErro.visible = false
+
+
+func ver_se_certo(item: String):
+	var item_certo_por_estado = {
+		0: "Bandagem",
+		1: "Tala"
+	}
+
+	if item_certo_por_estado.has(estado):
+		if item == item_certo_por_estado[estado]:
+			estado += 1
+			$MsgErro.visible = false
+			erro_visivel = false
+			sucesso.play()
+		else:
+			mostrar_erro("  Item incorreto!\nTente novamente.")
+			errado.play()
+
+
+func mostrar_erro(msg: String):
+	var label = $MsgErro
+	label.text = msg
+	label.visible = true
+	erro_timer = 2.0
+	erro_visivel = true
+
+
+func _on_item_1_pressed() -> void:
+	selected_item = "Bandagem"
+	ver_se_certo(selected_item)
+
+
+func _on_item_3_pressed() -> void:
+	selected_item = "Tala"
+	ver_se_certo(selected_item)
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://level_select.tscn")
+
+
+func _on_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://level_select.tscn")
