@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://cihac584x212b"]
+
+[ext_resource type="Script" uid="uid://c5dwnr38kwynh" path="res://level3.gd" id="1_sotx7"]
+[ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_ymh28"]
+[ext_resource type="Texture2D" uid="uid://dikq5ihbvjpky" path="res://sprites socorristas/braço queimadura.png" id="3_7oc4e"]
+[ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="3_siwpi"]
+[ext_resource type="Texture2D" uid="uid://c33lerbuvl03w" path="res://sprites socorristas/fundovermelho.png" id="4_ymh28"]
+[ext_resource type="Texture2D" uid="uid://bu1hilfytchdi" path="res://sprites socorristas/braço estendido.png" id="8_l2pgs"]
+[ext_resource type="Texture2D" uid="uid://cdd2h4yr4w8qv" path="res://sprites socorristas/braço estendido bandagens.png" id="9_2272n"]
+[ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="10_bs5pn"]
+[ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_utqry"]
+[ext_resource type="Texture2D" uid="uid://b1yremkvyntsh" path="res://sprites socorristas/agua sem fundo.png" id="12_0m7xm"]
+[ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="13_7oc4e"]
+[ext_resource type="Texture2D" uid="uid://jg6vveqfoxvj" path="res://sprites socorristas/alcool sem fundo.png" id="13_qoi87"]
+[ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="14_i6w5t"]
+[ext_resource type="Texture2D" uid="uid://cw4uo7x0so04w" path="res://sprites socorristas/pomada sem fundo.png" id="15_l2pgs"]
+
+[node name="Level3" type="Node2D"]
+position = Vector2(580, 280)
+script = ExtResource("1_sotx7")
+
+[node name="Cena" type="Sprite2D" parent="."]
+position = Vector2(-4.5000095, 44.499977)
+scale = Vector2(4.192727, 3.5464482)
+texture = ExtResource("2_ymh28")
+
+[node name="BemVindo" type="Label" parent="."]
+offset_left = -192.0
+offset_top = -277.0
+offset_right = 171.0
+offset_bottom = -203.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Level 3: Braço queimado"
+horizontal_alignment = 1
+
+[node name="BalaoTextoIntro" type="Sprite2D" parent="."]
+position = Vector2(-13.99998, -137.11876)
+scale = Vector2(1.4867498, 0.60587496)
+texture = ExtResource("3_siwpi")
+
+[node name="Mensagem" type="Label" parent="."]
+offset_left = -197.0
+offset_top = -193.0
+offset_right = 170.0
+offset_bottom = -110.0
+text = "Nosso paciente está com o braço queimado!
+Primeiro precisamos limpar o ferimento."
+
+[node name="BracoQueimadura" type="Sprite2D" parent="."]
+position = Vector2(-25, 5)
+texture = ExtResource("3_7oc4e")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -578.0
+offset_top = 178.0
+offset_right = 567.0
+offset_bottom = 364.0
+
+[node name="Fundo" type="Sprite2D" parent="UI"]
+position = Vector2(574, 95.50001)
+scale = Vector2(1.8402556, 0.6102237)
+texture = ExtResource("4_ymh28")
+
+[node name="Button_Agua" type="TextureButton" parent="UI"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17400001
+anchor_top = 0.48400003
+anchor_right = 0.17400001
+anchor_bottom = 0.48400003
+offset_left = -75.23
+offset_top = -75.024
+offset_right = 424.77
+offset_bottom = 424.976
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_0m7xm")
+
+[node name="Button_Alcool" type="TextureButton" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.367
+anchor_top = 0.47800002
+anchor_right = 0.367
+anchor_bottom = 0.47800002
+offset_left = -75.21503
+offset_top = -73.908005
+offset_right = 424.78497
+offset_bottom = 426.09198
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_qoi87")
+
+[node name="Button_Atadura" type="TextureButton" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.58500004
+anchor_top = 0.45000002
+anchor_right = 0.58500004
+anchor_bottom = 0.45000002
+offset_left = -78.82507
+offset_top = -68.700005
+offset_right = 146.17493
+offset_bottom = 156.29999
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("14_i6w5t")
+
+[node name="Button_Pomada" type="TextureButton" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82900006
+anchor_top = 0.46600002
+anchor_right = 0.82900006
+anchor_bottom = 0.46600002
+offset_left = -79.20508
+offset_top = -71.676
+offset_right = 145.79492
+offset_bottom = 153.324
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("15_l2pgs")
+
+[node name="BracoEstendido" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_l2pgs")
+
+[node name="BracoAtadura" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_2272n")
+
+[node name="Errado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_bs5pn")
+
+[node name="Sucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_utqry")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -580.0
+offset_top = -279.0
+offset_right = -230.0
+offset_bottom = 71.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_7oc4e")
+
+[connection signal="pressed" from="UI/Button_Agua" to="." method="_on_button_agua_pressed"]
+[connection signal="pressed" from="UI/Button_Alcool" to="." method="_on_button_alcool_pressed"]
+[connection signal="pressed" from="UI/Button_Atadura" to="." method="_on_button_atadura_pressed"]
+[connection signal="pressed" from="UI/Button_Pomada" to="." method="_on_button_pomada_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
