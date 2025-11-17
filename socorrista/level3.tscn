@@ -1,11 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cihac584x212b"]
+[gd_scene load_steps=28 format=3 uid="uid://cihac584x212b"]
 
 [ext_resource type="Script" uid="uid://c5dwnr38kwynh" path="res://level3.gd" id="1_sotx7"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_ymh28"]
 [ext_resource type="Texture2D" uid="uid://dikq5ihbvjpky" path="res://sprites socorristas/braço queimadura.png" id="3_7oc4e"]
 [ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="3_siwpi"]
 [ext_resource type="Texture2D" uid="uid://c33lerbuvl03w" path="res://sprites socorristas/fundovermelho.png" id="4_ymh28"]
+[ext_resource type="Texture2D" uid="uid://job4sponv04m" path="res://sprites socorristas/circulo.png" id="5_qoi87"]
 [ext_resource type="Texture2D" uid="uid://bu1hilfytchdi" path="res://sprites socorristas/braço estendido.png" id="8_l2pgs"]
+[ext_resource type="Script" uid="uid://bejc3vfmq3cu4" path="res://button_atadura.gd" id="9_0m7xm"]
 [ext_resource type="Texture2D" uid="uid://cdd2h4yr4w8qv" path="res://sprites socorristas/braço estendido bandagens.png" id="9_2272n"]
 [ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="10_bs5pn"]
 [ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_utqry"]
@@ -14,6 +16,37 @@
 [ext_resource type="Texture2D" uid="uid://jg6vveqfoxvj" path="res://sprites socorristas/alcool sem fundo.png" id="13_qoi87"]
 [ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="14_i6w5t"]
 [ext_resource type="Texture2D" uid="uid://cw4uo7x0so04w" path="res://sprites socorristas/pomada sem fundo.png" id="15_l2pgs"]
+[ext_resource type="Texture2D" uid="uid://bee7po6qrkk0u" path="res://sprites socorristas/Next_level.png" id="17_i6w5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qoi87"]
+radius = 140.35669
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6w5t"]
+radius = 143.178
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2pgs"]
+radius = 136.01471
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2272n"]
+radius = 130.38383
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bs5pn"]
+radius = 134.53624
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_utqry"]
+radius = 128.06248
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gaofk"]
+radius = 128.06248
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itrrf"]
+radius = 125.299644
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mr4ff"]
+radius = 134.53624
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoi87"]
+size = Vector2(194.28583, 161.42862)
 
 [node name="Level3" type="Node2D"]
 position = Vector2(580, 280)
@@ -51,6 +84,101 @@ Primeiro precisamos limpar o ferimento."
 position = Vector2(-25, 5)
 texture = ExtResource("3_7oc4e")
 
+[node name="CirculosDeAtadura" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="Circulo" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(130, 36)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area1" type="Area2D" parent="CirculosDeAtadura/Circulo" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo/Area1"]
+shape = SubResource("CircleShape2D_qoi87")
+
+[node name="Circulo2" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(112, -26.99997)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area2" type="Area2D" parent="CirculosDeAtadura/Circulo2" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo2/Area2"]
+shape = SubResource("CircleShape2D_i6w5t")
+
+[node name="Circulo3" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(54, 44)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area3" type="Area2D" parent="CirculosDeAtadura/Circulo3" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo3/Area3"]
+shape = SubResource("CircleShape2D_l2pgs")
+
+[node name="Circulo4" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(11, -26.999985)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area4" type="Area2D" parent="CirculosDeAtadura/Circulo4" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo4/Area4"]
+shape = SubResource("CircleShape2D_2272n")
+
+[node name="Circulo5" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-31, 41)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area5" type="Area2D" parent="CirculosDeAtadura/Circulo5" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo5/Area5"]
+shape = SubResource("CircleShape2D_bs5pn")
+
+[node name="Circulo6" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-83, -17)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area6" type="Area2D" parent="CirculosDeAtadura/Circulo6" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo6/Area6"]
+shape = SubResource("CircleShape2D_utqry")
+
+[node name="Circulo7" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-83, 28)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area7" type="Area2D" parent="CirculosDeAtadura/Circulo7" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo7/Area7"]
+shape = SubResource("CircleShape2D_gaofk")
+
+[node name="Circulo8" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-166, -15)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area8" type="Area2D" parent="CirculosDeAtadura/Circulo8" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo8/Area8"]
+shape = SubResource("CircleShape2D_itrrf")
+
+[node name="Circulo9" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-141, 39)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_qoi87")
+
+[node name="Area9" type="Area2D" parent="CirculosDeAtadura/Circulo9" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo9/Area9"]
+shape = SubResource("CircleShape2D_mr4ff")
+
+[node name="CirculosDeAtaduraX" type="CanvasGroup" parent="."]
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -86,9 +214,9 @@ anchor_left = 0.367
 anchor_top = 0.47800002
 anchor_right = 0.367
 anchor_bottom = 0.47800002
-offset_left = -75.21503
+offset_left = -65.21503
 offset_top = -73.908005
-offset_right = 424.78497
+offset_right = 434.78497
 offset_bottom = 426.09198
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("13_qoi87")
@@ -96,16 +224,27 @@ texture_normal = ExtResource("13_qoi87")
 [node name="Button_Atadura" type="TextureButton" parent="UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.58500004
-anchor_top = 0.45000002
-anchor_right = 0.58500004
-anchor_bottom = 0.45000002
-offset_left = -78.82507
-offset_top = -68.700005
-offset_right = 146.17493
-offset_bottom = 156.29999
+anchor_left = 0.595
+anchor_top = 0.504
+anchor_right = 0.595
+anchor_bottom = 0.504
+offset_left = -112.275024
+offset_top = -112.744
+offset_right = 112.724976
+offset_bottom = 112.256
 scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(112.5, 112.5)
+mouse_filter = 1
 texture_normal = ExtResource("14_i6w5t")
+script = ExtResource("9_0m7xm")
+
+[node name="Area2D" type="Area2D" parent="UI/Button_Atadura"]
+position = Vector2(116.07143, 111.78571)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Button_Atadura/Area2D"]
+position = Vector2(5.7142944, 6.428589)
+scale = Vector2(0.99999905, 0.99999905)
+shape = SubResource("RectangleShape2D_qoi87")
 
 [node name="Button_Pomada" type="TextureButton" parent="UI"]
 layout_mode = 1
@@ -135,7 +274,7 @@ stream = ExtResource("10_bs5pn")
 [node name="Sucesso" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_utqry")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Home" type="TextureButton" parent="."]
 offset_left = -580.0
 offset_top = -279.0
 offset_right = -230.0
@@ -143,8 +282,21 @@ offset_bottom = 71.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("13_7oc4e")
 
+[node name="NextLevel" type="TextureButton" parent="."]
+visible = false
+offset_left = 452.0
+offset_top = -310.0
+offset_right = 952.0
+offset_bottom = 190.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("17_i6w5t")
+
 [connection signal="pressed" from="UI/Button_Agua" to="." method="_on_button_agua_pressed"]
 [connection signal="pressed" from="UI/Button_Alcool" to="." method="_on_button_alcool_pressed"]
-[connection signal="pressed" from="UI/Button_Atadura" to="." method="_on_button_atadura_pressed"]
+[connection signal="button_down" from="UI/Button_Atadura" to="UI/Button_Atadura" method="_on_button_down"]
+[connection signal="button_up" from="UI/Button_Atadura" to="UI/Button_Atadura" method="_on_button_up"]
+[connection signal="gui_input" from="UI/Button_Atadura" to="UI/Button_Atadura" method="_on_gui_input"]
+[connection signal="ready" from="UI/Button_Atadura" to="UI/Button_Atadura" method="_on_ready"]
 [connection signal="pressed" from="UI/Button_Pomada" to="." method="_on_button_pomada_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
