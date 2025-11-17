@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dxy4phq2otc3d"]
+[gd_scene load_steps=39 format=3 uid="uid://dxy4phq2otc3d"]
 
 [ext_resource type="Script" uid="uid://4x5j14eayoiq" path="res://level_select.gd" id="1_il3u1"]
 [ext_resource type="Texture2D" uid="uid://27v58dacuhb6" path="res://sprites socorristas/background/frame_00_delay-0.07s.png" id="2_vuyhu"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dmoxy05lwwknp" path="res://sprites socorristas/background/frame_32_delay-0.03s.png" id="34_0bnwo"]
 [ext_resource type="Texture2D" uid="uid://b8q7iwoauqafp" path="res://sprites socorristas/background/frame_33_delay-0.07s.png" id="35_oh0bb"]
 [ext_resource type="Texture2D" uid="uid://dh5qroy4peaw7" path="res://sprites socorristas/background/frame_34_delay-5.46s.png" id="36_k47or"]
+[ext_resource type="FontFile" uid="uid://dj1ej1cdnqskv" path="res://sprites socorristas/fontes/PressStart2P-Regular.ttf" id="37_mlvvq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gslmc"]
 animations = [{
@@ -170,36 +171,46 @@ theme_override_constants/separation = 50
 [node name="Level1" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("37_mlvvq")
+theme_override_font_sizes/font_size = 30
 text = "Level
+
 1"
 
 [node name="level2" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("37_mlvvq")
+theme_override_font_sizes/font_size = 30
 text = "Level
+
 2"
 
 [node name="level3" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("37_mlvvq")
+theme_override_font_sizes/font_size = 30
 text = "Level
+
 3"
 
 [node name="level4" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("37_mlvvq")
+theme_override_font_sizes/font_size = 30
 text = "Level
+
 4"
 
 [node name="level5" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("37_mlvvq")
+theme_override_font_sizes/font_size = 30
 text = "Level
+
 5"
 
 [connection signal="pressed" from="HBoxContainer/Level1" to="." method="_on_level_1_pressed"]

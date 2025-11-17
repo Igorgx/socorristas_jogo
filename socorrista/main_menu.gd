@@ -10,4 +10,4 @@ func _on_opcoes_pressed() -> void:
 
 
 func _on_sair_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().quit()

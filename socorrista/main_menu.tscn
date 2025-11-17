@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bri3e0pk58yse"]
+[gd_scene load_steps=40 format=3 uid="uid://bri3e0pk58yse"]
 
 [ext_resource type="Script" uid="uid://t3o87mkyckmi" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://27v58dacuhb6" path="res://sprites socorristas/background/frame_00_delay-0.07s.png" id="2_swr0i"]
@@ -36,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://dmoxy05lwwknp" path="res://sprites socorristas/background/frame_32_delay-0.03s.png" id="34_cs3jf"]
 [ext_resource type="Texture2D" uid="uid://b8q7iwoauqafp" path="res://sprites socorristas/background/frame_33_delay-0.07s.png" id="35_g7l3v"]
 [ext_resource type="Texture2D" uid="uid://dh5qroy4peaw7" path="res://sprites socorristas/background/frame_34_delay-5.46s.png" id="36_1gaup"]
+[ext_resource type="FontFile" uid="uid://bsihjv8y4fucx" path="res://sprites socorristas/fontes/SuperPixel-m2L8j.ttf" id="37_ix6bv"]
+[ext_resource type="FontFile" uid="uid://dj1ej1cdnqskv" path="res://sprites socorristas/fontes/PressStart2P-Regular.ttf" id="38_2kjvi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kduks"]
 animations = [{
@@ -161,10 +163,11 @@ autoplay = "animacao"
 frame_progress = 0.36213276
 
 [node name="Label" type="Label" parent="."]
-offset_left = 400.0
-offset_top = 69.0
-offset_right = 775.0
-offset_bottom = 165.0
+offset_left = 258.0
+offset_top = 79.0
+offset_right = 898.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("37_ix6bv")
 theme_override_font_sizes/font_size = 70
 text = "Socorristas"
 horizontal_alignment = 1
@@ -178,16 +181,19 @@ offset_bottom = 714.0
 
 [node name="Jogar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("38_2kjvi")
 theme_override_font_sizes/font_size = 30
 text = "Jogar"
 
 [node name="Opcoes" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("38_2kjvi")
 theme_override_font_sizes/font_size = 30
 text = "Opções"
 
 [node name="sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("38_2kjvi")
 theme_override_font_sizes/font_size = 30
 text = "Sair"
 
