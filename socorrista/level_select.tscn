@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dxy4phq2otc3d"]
+[gd_scene load_steps=40 format=3 uid="uid://dxy4phq2otc3d"]
 
 [ext_resource type="Script" uid="uid://4x5j14eayoiq" path="res://level_select.gd" id="1_il3u1"]
 [ext_resource type="Texture2D" uid="uid://27v58dacuhb6" path="res://sprites socorristas/background/frame_00_delay-0.07s.png" id="2_vuyhu"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b8q7iwoauqafp" path="res://sprites socorristas/background/frame_33_delay-0.07s.png" id="35_oh0bb"]
 [ext_resource type="Texture2D" uid="uid://dh5qroy4peaw7" path="res://sprites socorristas/background/frame_34_delay-5.46s.png" id="36_k47or"]
 [ext_resource type="FontFile" uid="uid://dj1ej1cdnqskv" path="res://sprites socorristas/fontes/PressStart2P-Regular.ttf" id="37_mlvvq"]
+[ext_resource type="Texture2D" uid="uid://br06tvqhlm8pg" path="res://sprites socorristas/seta branca.png" id="38_jkqmq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gslmc"]
 animations = [{
@@ -213,7 +214,22 @@ text = "Level
 
 5"
 
+[node name="SetaBranca" type="Sprite2D" parent="."]
+position = Vector2(67, 48)
+scale = Vector2(0.27222222, 0.33888888)
+texture = ExtResource("38_jkqmq")
+flip_h = true
+
+[node name="TextureButton" type="TextureButton" parent="SetaBranca"]
+offset_left = -172.65306
+offset_top = -180.00002
+offset_right = 187.34694
+offset_bottom = 179.99998
+flip_h = true
+
 [connection signal="pressed" from="HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="SetaBranca/TextureButton" to="." method="_on_texture_button_pressed"]

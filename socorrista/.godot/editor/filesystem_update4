@@ -1,4 +1,7 @@
 res://level_4.tscn
+res://level_4.gd
+res://level2.tscn
+res://level5.tscn
+res://level_select.gd
 res://level_select.tscn
-res://main_menu.tscn
-res://main_menu.gd
+res://level_5.gd

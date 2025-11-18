@@ -43,3 +43,7 @@ func _process(delta):
 func _on_timer_timeout() -> void:
 	$Timer.paused = true
 	$engasgo/Sprite2D.texture = load("res://sprites socorristas/heimlich_comeco.png") # Replace with function body.
+
+
+func _on_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://level_select.tscn")
