@@ -2,12 +2,8 @@ extends TextureButton
 
 @onready var circulos_parent := get_node("../../CirculosDeAtadura")
 @onready var nextLevel = $"../../NextLevel"
-@onready var sucesso: AudioStreamPlayer = $"../../Sucesso"
-@onready var errado: AudioStreamPlayer = $"../../Errado"
-@onready var circulos := circulos_parent.get_children()
 @onready var start_position := global_position
 @onready var start_scale := scale
-@onready var mensagem_final: RichTextLabel = $"../../MensagemFinal"
 
 var circuloXQtd = 9
 var dragging := false
@@ -45,12 +41,11 @@ func aplicar_x_no_circulo(circulo):
 		level3.mensagem.text = "PACIENTE TRATADO!"
 		level3.estado = "tratado"
 		nextLevel.visible = true
-		mensagem_final.visible = true
-		
+
 func _on_button_down():
 	if level3.estado != "limpo":
 		level3.mensagem.text = "Item errado! Primeiro lave o ferimento com\nágua."
-		errado.play()
+		level3.errado.play()
 	else:
 		dragging = true
 		circulos_parent.visible = true
@@ -65,12 +60,12 @@ func _on_button_up():
 	if alvo == null:
 		scale = start_scale
 		global_position = start_position
-		errado.play()
+		level3.errado.play()
 	else:
 		aplicar_x_no_circulo(alvo)
 		scale = start_scale
 		global_position = start_position
-		sucesso.play()
+		level3.sucesso.play()
 
 func _on_gui_input(event):
 	if dragging and event is InputEventMouseMotion:

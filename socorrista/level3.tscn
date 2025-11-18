@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cihac584x212b"]
+[gd_scene load_steps=28 format=3 uid="uid://cihac584x212b"]
 
 [ext_resource type="Script" uid="uid://c5dwnr38kwynh" path="res://level3.gd" id="1_sotx7"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_ymh28"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="14_i6w5t"]
 [ext_resource type="Texture2D" uid="uid://cw4uo7x0so04w" path="res://sprites socorristas/pomada sem fundo.png" id="15_l2pgs"]
 [ext_resource type="Texture2D" uid="uid://bee7po6qrkk0u" path="res://sprites socorristas/Next_level.png" id="17_i6w5t"]
-[ext_resource type="FontFile" uid="uid://bsihjv8y4fucx" path="res://sprites socorristas/fontes/SuperPixel-m2L8j.ttf" id="18_l2pgs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qoi87"]
 radius = 140.35669
@@ -86,6 +85,7 @@ position = Vector2(-25, 5)
 texture = ExtResource("3_7oc4e")
 
 [node name="CirculosDeAtadura" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Circulo" type="Sprite2D" parent="CirculosDeAtadura"]
 position = Vector2(130, 36)
@@ -176,8 +176,6 @@ texture = ExtResource("5_qoi87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo9/Area9"]
 shape = SubResource("CircleShape2D_mr4ff")
-
-[node name="CirculosDeAtaduraX" type="CanvasGroup" parent="."]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -284,23 +282,12 @@ texture_normal = ExtResource("13_7oc4e")
 
 [node name="NextLevel" type="TextureButton" parent="."]
 visible = false
-offset_left = 197.0
-offset_top = -151.0
-offset_right = 697.0
-offset_bottom = 349.0
+offset_left = 452.0
+offset_top = -310.0
+offset_right = 952.0
+offset_bottom = 190.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("17_i6w5t")
-
-[node name="MensagemFinal" type="RichTextLabel" parent="."]
-visible = false
-offset_left = -253.0
-offset_top = -93.0
-offset_right = 205.0
-offset_bottom = 18.0
-theme_override_colors/default_color = Color(0.014938173, 0.66257006, 3.85046e-07, 1)
-theme_override_fonts/normal_font = ExtResource("18_l2pgs")
-theme_override_font_sizes/normal_font_size = 40
-text = "Bom trabalho!"
 
 [connection signal="pressed" from="UI/Button_Agua" to="." method="_on_button_agua_pressed"]
 [connection signal="pressed" from="UI/Button_Alcool" to="." method="_on_button_alcool_pressed"]

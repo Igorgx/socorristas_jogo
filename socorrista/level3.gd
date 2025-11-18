@@ -11,7 +11,7 @@ extends Node2D
 # Carrega as imagens (ajuste os nomes conforme seus arquivos)
 var braco_queimado = preload("res://sprites socorristas/braço queimadura.png")
 var braco_atadura = preload("res://sprites socorristas/braço estendido bandagens.png")
-var braco_limpo = preload("res://sprites socorristas/braço estendido.png")
+var braco_limpo = preload("res://sprites socorristas/braço queimadura limpo.png")
 var estado = "queimado"
 
 func _on_button_agua_pressed() -> void:
