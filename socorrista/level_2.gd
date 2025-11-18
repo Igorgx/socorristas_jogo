@@ -44,6 +44,9 @@ func ver_se_certo(item: String):
 			$MsgErro.visible = false
 			erro_visivel = false
 			sucesso.play()
+			
+			if estado == 2:
+				$NextLevel.visible = true
 		else:
 			mostrar_erro("  Item incorreto!\nTente novamente.")
 			errado.play()
@@ -72,3 +75,6 @@ func _on_texture_button_pressed() -> void:
 
 func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://level_select.tscn")
+
+func _on_next_level_pressed() -> void:
+	get_tree().change_scene_to_file("res://level3.tscn")
