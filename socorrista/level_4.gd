@@ -13,6 +13,8 @@ func play_final():
 	$engasgo/Sprite2D.texture = load("res://sprites socorristas/heimlich_fim.png")
 	$NivelFinalizado.position.x = displayx/2
 	$NivelFinalizado.position.y = displayy/2
+	$NextLevel.visible = true
+	$MensagemFinal.visible = true
 	
 func play_and_restart():
 	
@@ -47,3 +49,7 @@ func _on_timer_timeout() -> void:
 
 func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://level_select.tscn")
+
+
+func _on_next_level_pressed() -> void:
+	get_tree().change_scene_to_file("res://level5.tscn")

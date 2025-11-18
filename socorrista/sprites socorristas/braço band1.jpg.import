@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0v2qbbafgs5g"
-path="res://.godot/imported/braço_bandagem1.png-89c15c4a6c8ae15adc03e50a2d59d850.ctex"
+uid="uid://ll0yptqfpdp3"
+path="res://.godot/imported/braço band1.jpg-83869bcfdbe5d3283bf29559b2cff32b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites socorristas/braço_bandagem1.png"
-dest_files=["res://.godot/imported/braço_bandagem1.png-89c15c4a6c8ae15adc03e50a2d59d850.ctex"]
+source_file="res://sprites socorristas/braço band1.jpg"
+dest_files=["res://.godot/imported/braço band1.jpg-83869bcfdbe5d3283bf29559b2cff32b.ctex"]
 
 [params]
 

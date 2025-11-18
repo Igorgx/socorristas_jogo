@@ -51,7 +51,7 @@ func ver_se_certo(item: String):
 			
 			if estado == 3:
 				$NextLevel.visible = true
-				
+				$MensagemFinal.visible = true
 		else:
 			mostrar_erro("  Item incorreto!\nTente novamente.")
 			errado.play()
