@@ -3,14 +3,15 @@ extends Node2D
 # Pegando os nós da cena
 @onready var bracoQueimadura = $BracoQueimadura
 @onready var bracoLimpo = $BracoEstendido
-@onready var bracoAtadura = $BracoAtadura
 @onready var mensagem = $Mensagem
 @onready var errado: AudioStreamPlayer = $Errado
 @onready var sucesso: AudioStreamPlayer = $Sucesso
 
 # Carrega as imagens (ajuste os nomes conforme seus arquivos)
 var braco_queimado = preload("res://sprites socorristas/braço queimadura.png")
-var braco_atadura = preload("res://sprites socorristas/braço estendido bandagens.png")
+var braco_pouco_enfaixado = preload("res://sprites socorristas/Braco queimado pouco enfaixado.png")
+var braco_metade_enfaixado = preload("res://sprites socorristas/Braco queimado metade enfaixado.png")
+var braco_enfaixado = preload("res://sprites socorristas/braço estendido bandagens.png")
 var braco_limpo = preload("res://sprites socorristas/braço queimadura limpo.png")
 var estado = "queimado"
 
