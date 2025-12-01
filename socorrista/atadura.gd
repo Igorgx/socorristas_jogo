@@ -36,7 +36,7 @@ func aplicar_verde_no_circulo(circulo):
 	colisao.disabled = true
 	
 	circuloXQtd -= 1
-	level2.mensagem.text = "Continue usando a atadura!\nainda falta: "+str(circuloXQtd)+" ponto(s)"
+	level2.mensagem.text = "Continue usando a bandagem!\nainda falta: "+str(circuloXQtd)+" ponto(s)"
 	if circuloXQtd == 2:
 		level2.bracoQuebrado.texture = level2.braco_pouco_enfaixado
 	if circuloXQtd == 1:

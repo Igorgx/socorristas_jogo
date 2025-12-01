@@ -68,33 +68,36 @@ texture = ExtResource("4_qulpo")
 [node name="CirculosDeAtadura" type="CanvasGroup" parent="."]
 
 [node name="Circulo" type="Sprite2D" parent="CirculosDeAtadura"]
-position = Vector2(54, 44)
+position = Vector2(109, 10)
 scale = Vector2(0.099999994, 0.099999994)
 texture = ExtResource("15_lwvnx")
 
 [node name="Area3" type="Area2D" parent="CirculosDeAtadura/Circulo" groups=["circulo_atadura"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo/Area3"]
+position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_iakae")
 
 [node name="Circulo1" type="Sprite2D" parent="CirculosDeAtadura"]
-position = Vector2(-28, -18)
+position = Vector2(26, -12)
 scale = Vector2(0.099999994, 0.099999994)
 texture = ExtResource("15_lwvnx")
 
 [node name="Area4" type="Area2D" parent="CirculosDeAtadura/Circulo1" groups=["circulo_atadura"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo1/Area4"]
+position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_7mylh")
 
 [node name="Circulo2" type="Sprite2D" parent="CirculosDeAtadura"]
-position = Vector2(-84, 27)
+position = Vector2(-79, 17)
 scale = Vector2(0.099999994, 0.099999994)
 texture = ExtResource("15_lwvnx")
 
 [node name="Area5" type="Area2D" parent="CirculosDeAtadura/Circulo2" groups=["circulo_atadura"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo2/Area5"]
+position = Vector2(10, 0)
 shape = SubResource("CircleShape2D_3k4dh")
 
 [node name="UI2" type="Control" parent="."]
@@ -182,11 +185,10 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_dc5vx")
 
 [node name="MensagemFinal" type="RichTextLabel" parent="."]
-visible = false
-offset_left = -199.0
-offset_top = -87.0
-offset_right = 298.0
-offset_bottom = 79.0
+offset_left = -242.0
+offset_top = 89.0
+offset_right = 255.0
+offset_bottom = 255.0
 theme_override_colors/default_color = Color(0.014938173, 0.66257006, 3.85046e-07, 1)
 theme_override_fonts/normal_font = ExtResource("13_s8oj7")
 theme_override_font_sizes/normal_font_size = 40

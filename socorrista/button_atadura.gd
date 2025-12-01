@@ -4,6 +4,7 @@ extends TextureButton
 @onready var nextLevel = $"../../NextLevel"
 @onready var start_position := global_position
 @onready var start_scale := scale
+@onready var mensagem_final: RichTextLabel = $"../../MensagemFinal"
 
 var circuloXQtd = 3
 var dragging := false
@@ -45,6 +46,7 @@ func aplicar_verde_no_circulo(circulo):
 		level3.mensagem.text = "PACIENTE TRATADO!"
 		level3.estado = "tratado"
 		nextLevel.visible = true
+		mensagem_final.visible = true
 
 func _on_button_down():
 	if level3.estado != "limpo":
