@@ -123,21 +123,18 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("6_5j5gb")
 script = ExtResource("5_crycw")
-item_name = "Álcool"
 
 [node name="Item2" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("8_mx85b")
 script = ExtResource("5_crycw")
-item_name = "Curativo"
 
 [node name="Item3" type="TextureButton" parent="UI/BarraItens"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("9_hx44q")
 script = ExtResource("5_crycw")
-item_name = "Pomada"
 
 [node name="Home" type="TextureButton" parent="."]
 offset_right = 350.0

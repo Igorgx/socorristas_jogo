@@ -1,149 +1,162 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfxa8qxegwhsf"]
+[gd_scene load_steps=21 format=3 uid="uid://cfxa8qxegwhsf"]
 
 [ext_resource type="Script" uid="uid://crr503f620vgv" path="res://level_2.gd" id="1_rmy57"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="2_qulpo"]
 [ext_resource type="Texture2D" uid="uid://be2nvpvknimdl" path="res://sprites socorristas/balaotexto-Photoroom.png" id="3_jifot"]
 [ext_resource type="Texture2D" uid="uid://b7kesqs7mly34" path="res://sprites socorristas/braço quebrado exposto.png" id="4_qulpo"]
 [ext_resource type="Texture2D" uid="uid://ca85xbih5xfdq" path="res://sprites socorristas/atadura sem fundo.png" id="6_8i3m3"]
-[ext_resource type="Script" uid="uid://d4lj4ox08chko" path="res://iten_1.gd" id="6_s8oj7"]
 [ext_resource type="Texture2D" uid="uid://bihvvxll078sr" path="res://sprites socorristas/tala_225.png" id="7_rmy57"]
 [ext_resource type="Texture2D" uid="uid://c33lerbuvl03w" path="res://sprites socorristas/fundovermelho.png" id="8_qulpo"]
+[ext_resource type="Script" uid="uid://1i4xuvk00ntm" path="res://atadura.gd" id="8_r8rrl"]
 [ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="8_rmy57"]
 [ext_resource type="AudioStream" uid="uid://b50e6cjpls5qx" path="res://sprites socorristas/sound/errado.mp3" id="10_3opl0"]
+[ext_resource type="Texture2D" uid="uid://deyx1e3s474tf" path="res://sprites socorristas/braço_tala.png" id="10_r8rrl"]
 [ext_resource type="AudioStream" uid="uid://cri1btj13ung1" path="res://sprites socorristas/sound/sucesso.mp3" id="11_dc5vx"]
 [ext_resource type="Texture2D" uid="uid://bee7po6qrkk0u" path="res://sprites socorristas/Next_level.png" id="12_dc5vx"]
+[ext_resource type="Texture2D" uid="uid://cdd2h4yr4w8qv" path="res://sprites socorristas/braço estendido bandagens.png" id="13_f8ci1"]
 [ext_resource type="FontFile" uid="uid://bsihjv8y4fucx" path="res://sprites socorristas/fontes/SuperPixel-m2L8j.ttf" id="13_s8oj7"]
+[ext_resource type="Texture2D" uid="uid://job4sponv04m" path="res://sprites socorristas/circulo.png" id="15_lwvnx"]
 
-[sub_resource type="GDScript" id="GDScript_xy4tn"]
-script/source = "extends Area2D
+[sub_resource type="CircleShape2D" id="CircleShape2D_iakae"]
+radius = 136.01471
 
-func _input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		var level = get_tree().get_first_node_in_group(\"level_controller\")
-		if level:
-			if level.selected_item == level.item_correto:
-				print(\"✅ Usou o item correto:\", level.selected_item)
-				level.ir_para_proxima_cena()
-			elif level.selected_item != \"\":
-				print(\"❌ Item errado:\", level.selected_item)
-			else:
-				print(\"⚠️ Nenhum item selecionado.\")
-"
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mylh"]
+radius = 130.38383
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
-size = Vector2(479, 120)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3k4dh"]
+radius = 134.53624
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idpoe"]
+size = Vector2(194.28583, 161.42862)
 
 [node name="Level2" type="Node2D"]
+position = Vector2(580, 280)
 script = ExtResource("1_rmy57")
 
 [node name="Cena" type="Sprite2D" parent="."]
-position = Vector2(573.9866, 324.3119)
-rotation = 0.0011901151
-scale = Vector2(4.2145452, 3.543039)
+position = Vector2(-4.5000095, 44.499977)
+scale = Vector2(4.192727, 3.5464482)
 texture = ExtResource("2_qulpo")
 
 [node name="BemVindo" type="Label" parent="."]
-offset_left = 275.0
-offset_top = 5.0
-offset_right = 861.99994
-offset_bottom = 116.00003
+offset_left = -192.0
+offset_top = -277.0
+offset_right = 171.0
+offset_bottom = -203.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
-text = "Level 2: Braço Quebrado
-"
+text = "Level 2: Braço Quebrado"
 horizontal_alignment = 1
 
 [node name="BalaoTextoIntro" type="Sprite2D" parent="."]
-position = Vector2(567.5, 142)
-scale = Vector2(1.4966668, 0.6466666)
+position = Vector2(-13.99998, -137.11876)
+scale = Vector2(1.4867498, 0.60587496)
 texture = ExtResource("3_jifot")
 
-[node name="Intro" type="Label" parent="."]
-offset_left = 400.0
-offset_top = 92.0
-offset_right = 683.0
-offset_bottom = 167.0
+[node name="Mensagem" type="Label" parent="."]
+offset_left = -197.0
+offset_top = -193.0
+offset_right = 170.0
+offset_bottom = -110.0
 text = "Nosso paciente está com o braço quebrado
-Primeiro devemos utilizar a bandagem."
+Primeiro precisamos colocar bandagem."
 
-[node name="BraçoMachucado" type="Area2D" parent="."]
-position = Vector2(549, 303)
-script = SubResource("GDScript_xy4tn")
-
-[node name="Sprite2D" type="Sprite2D" parent="BraçoMachucado"]
+[node name="BracoQuebrado" type="Sprite2D" parent="."]
+position = Vector2(-25, 5)
 texture = ExtResource("4_qulpo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BraçoMachucado"]
-position = Vector2(0.5, 2)
-shape = SubResource("RectangleShape2D_i2041")
+[node name="CirculosDeAtadura" type="CanvasGroup" parent="."]
 
-[node name="UI" type="Control" parent="."]
+[node name="Circulo" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(54, 44)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("15_lwvnx")
+
+[node name="Area3" type="Area2D" parent="CirculosDeAtadura/Circulo" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo/Area3"]
+shape = SubResource("CircleShape2D_iakae")
+
+[node name="Circulo1" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-28, -18)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("15_lwvnx")
+
+[node name="Area4" type="Area2D" parent="CirculosDeAtadura/Circulo1" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo1/Area4"]
+shape = SubResource("CircleShape2D_7mylh")
+
+[node name="Circulo2" type="Sprite2D" parent="CirculosDeAtadura"]
+position = Vector2(-84, 27)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("15_lwvnx")
+
+[node name="Area5" type="Area2D" parent="CirculosDeAtadura/Circulo2" groups=["circulo_atadura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CirculosDeAtadura/Circulo2/Area5"]
+shape = SubResource("CircleShape2D_3k4dh")
+
+[node name="UI2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 242.0
-offset_top = 450.0
-offset_right = 856.0
-offset_bottom = 641.0
+offset_left = -578.0
+offset_top = 178.0
+offset_right = 567.0
+offset_bottom = 364.0
 
-[node name="BarraItens" type="HBoxContainer" parent="UI"]
-custom_minimum_size = Vector2(600, 120)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -237.0
-offset_top = -141.0
-offset_right = 723.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 44
-alignment = 1
-
-[node name="Item1" type="TextureButton" parent="UI/BarraItens"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture_normal = ExtResource("6_8i3m3")
-script = ExtResource("6_s8oj7")
-item_name = "Bandagem"
-
-[node name="Item2" type="TextureButton" parent="UI/BarraItens"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-script = ExtResource("6_s8oj7")
-item_name = "Tala"
-
-[node name="Item3" type="TextureButton" parent="UI/BarraItens"]
-custom_minimum_size = Vector2(225, 225)
-layout_mode = 2
-texture_normal = ExtResource("7_rmy57")
-stretch_mode = 0
-script = ExtResource("6_s8oj7")
-item_name = "Tala"
-
-[node name="Fundovermelho" type="Sprite2D" parent="UI/BarraItens"]
-show_behind_parent = true
-position = Vector2(523.0001, 95)
-scale = Vector2(3.702876, 1.2971245)
+[node name="Fundo" type="Sprite2D" parent="UI2"]
+position = Vector2(574, 95.50001)
+scale = Vector2(1.8402556, 0.6102237)
 texture = ExtResource("8_qulpo")
 
-[node name="Home" type="TextureButton" parent="."]
-offset_left = 2.0
-offset_top = 8.0
-offset_right = 352.0
-offset_bottom = 358.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("8_rmy57")
+[node name="atadura" type="TextureButton" parent="UI2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.595
+anchor_top = 0.504
+anchor_right = 0.595
+anchor_bottom = 0.504
+offset_left = -112.275024
+offset_top = -112.744
+offset_right = 112.724976
+offset_bottom = 112.256
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(112.5, 112.5)
+mouse_filter = 1
+texture_normal = ExtResource("6_8i3m3")
+script = ExtResource("8_r8rrl")
 
-[node name="MsgErro" type="Label" parent="."]
-offset_left = 869.0
-offset_top = 69.0
-offset_right = 1002.0
-offset_bottom = 163.0
-theme_override_colors/font_color = Color(0.81738645, 0, 0.0071710967, 1)
+[node name="Area2D" type="Area2D" parent="UI2/atadura"]
+position = Vector2(116.07143, 111.78571)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI2/atadura/Area2D"]
+position = Vector2(5.7142944, 6.428589)
+scale = Vector2(0.99999905, 0.99999905)
+shape = SubResource("RectangleShape2D_idpoe")
+
+[node name="Button_Pomada" type="TextureButton" parent="UI2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.51500005
+anchor_right = 0.377
+anchor_bottom = 0.51500005
+offset_left = -78.66495
+offset_top = -78.79001
+offset_right = 146.33511
+offset_bottom = 146.20999
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("7_rmy57")
+
+[node name="BracoTala" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-27, 6)
+texture = ExtResource("10_r8rrl")
+
+[node name="BracoAtadura" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_f8ci1")
 
 [node name="Errado" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_3opl0")
@@ -151,44 +164,38 @@ stream = ExtResource("10_3opl0")
 [node name="Sucesso" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_dc5vx")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureButton2" type="TextureButton" parent="."]
-offset_left = 442.0
-offset_top = 97.0
-offset_right = 702.0
-offset_bottom = 206.0
-
-[node name="TextureButton3" type="TextureButton" parent="."]
-offset_left = 250.0
-offset_top = 125.0
-offset_right = 290.0
-offset_bottom = 165.0
+[node name="Home" type="TextureButton" parent="."]
+offset_left = -580.0
+offset_top = -279.0
+offset_right = -230.0
+offset_bottom = 71.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_rmy57")
 
 [node name="NextLevel" type="TextureButton" parent="."]
 visible = false
-offset_left = 806.0
-offset_top = 132.0
-offset_right = 1306.0
-offset_bottom = 632.0
+offset_left = 259.0
+offset_top = -131.0
+offset_right = 759.0
+offset_bottom = 369.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_dc5vx")
 
 [node name="MensagemFinal" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 341.0
-offset_top = 187.0
-offset_right = 838.0
-offset_bottom = 353.0
+offset_left = -199.0
+offset_top = -87.0
+offset_right = 298.0
+offset_bottom = 79.0
 theme_override_colors/default_color = Color(0.014938173, 0.66257006, 3.85046e-07, 1)
 theme_override_fonts/normal_font = ExtResource("13_s8oj7")
 theme_override_font_sizes/normal_font_size = 40
 text = "Bom trabalho!"
 
-[connection signal="pressed" from="UI/BarraItens/Item1" to="." method="_on_item_1_pressed"]
-[connection signal="pressed" from="UI/BarraItens/Item2" to="." method="_on_item_2_pressed"]
-[connection signal="pressed" from="UI/BarraItens/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="button_down" from="UI2/atadura" to="UI2/atadura" method="_on_button_down"]
+[connection signal="button_up" from="UI2/atadura" to="UI2/atadura" method="_on_button_up"]
+[connection signal="gui_input" from="UI2/atadura" to="UI2/atadura" method="_on_gui_input"]
+[connection signal="ready" from="UI2/atadura" to="UI2/atadura" method="_on_ready"]
+[connection signal="pressed" from="UI2/Button_Pomada" to="." method="_on_button_pomada_pressed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
