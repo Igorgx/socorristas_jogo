@@ -159,6 +159,7 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("13_n8vhr")
 
 [node name="MensagemFinal" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 340.0
 offset_top = 382.0
 offset_right = 837.0

@@ -1,8 +1,8 @@
+Label
 RichTextLabel
 TextureButton
 Node2D
 Node
 AudioStreamPlayer
 AnimatedSprite2D
-Label
 Button

@@ -3,6 +3,7 @@ extends Node2D
 var qtde
 var displayx = DisplayServer.window_get_size().x
 var displayy = DisplayServer.window_get_size().y
+@onready var sucesso: AudioStreamPlayer = $Sucesso
 
 
 func _ready():
@@ -15,6 +16,7 @@ func play_final():
 	$NivelFinalizado.position.y = displayy/2
 	$NextLevel.visible = true
 	$MensagemFinal.visible = true
+		
 	
 func play_and_restart():
 	

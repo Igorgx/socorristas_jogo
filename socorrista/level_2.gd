@@ -34,6 +34,5 @@ func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://level_select.tscn")
 
 
-
 func _on_next_level_pressed() -> void:
 	get_tree().change_scene_to_file("res://level3.tscn")

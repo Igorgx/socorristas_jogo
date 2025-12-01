@@ -7,3 +7,7 @@ res://level_2.gd
 res://level3.tscn
 res://atadura.gd
 res://level1.tscn
+res://level_4.tscn
+res://level_select.tscn
+res://level_select.gd
+res://level_4.gd
