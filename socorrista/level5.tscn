@@ -1,14 +1,61 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0llnr2edrcnw"]
+[gd_scene load_steps=16 format=3 uid="uid://c0llnr2edrcnw"]
 
 [ext_resource type="Script" uid="uid://vqkpcbhevon6" path="res://level_5.gd" id="1_bf6rn"]
 [ext_resource type="Texture2D" uid="uid://b1g0fp7016134" path="res://sprites socorristas/cena.png" id="1_t4tfv"]
 [ext_resource type="Texture2D" uid="uid://cpfr50kg0aqux" path="res://sprites socorristas/cprbegin.png" id="2_bf6rn"]
-[ext_resource type="Texture2D" uid="uid://by6pvj64ir6yk" path="res://sprites socorristas/coracao.png" id="3_qmr0j"]
+[ext_resource type="Texture2D" uid="uid://xjwpb756m8tn" path="res://sprites socorristas/coracaoPulsando.png" id="4_x2odi"]
 [ext_resource type="Texture2D" uid="uid://duarftutj2dt" path="res://sprites socorristas/botaohome-Photoroom.png" id="5_qmr0j"]
 [ext_resource type="FontFile" uid="uid://bsihjv8y4fucx" path="res://sprites socorristas/fontes/SuperPixel-m2L8j.ttf" id="6_x2odi"]
+[ext_resource type="FontFile" uid="uid://dj1ej1cdnqskv" path="res://sprites socorristas/fontes/PressStart2P-Regular.ttf" id="7_8at3q"]
+[ext_resource type="AudioStream" uid="uid://bpdphlqfyga0v" path="res://sprites socorristas/sound/ambulance-siren-363656.mp3" id="8_87x5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2odi"]
-size = Vector2(165, 111.111145)
+size = Vector2(115, 111.111145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8at3q"]
+atlas = ExtResource("4_x2odi")
+region = Rect2(0, 0, 253, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87x5k"]
+atlas = ExtResource("4_x2odi")
+region = Rect2(253, 0, 253, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfwe1"]
+atlas = ExtResource("4_x2odi")
+region = Rect2(506, 0, 253, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3j2p"]
+atlas = ExtResource("4_x2odi")
+region = Rect2(759, 0, 253, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpwkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8at3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87x5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfwe1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3j2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfwe1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87x5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_87x5k"]
+font_color = Color(0.55, 0, 0, 1)
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_bf6rn")
@@ -43,14 +90,17 @@ color = Color(1, 1, 1, 0.4745098)
 [node name="area_coracao" type="Area2D" parent="pista"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pista/area_coracao"]
-position = Vector2(774, 20)
+position = Vector2(764, 20)
 scale = Vector2(0.4, 0.36)
 shape = SubResource("RectangleShape2D_x2odi")
 
-[node name="Coracao" type="Sprite2D" parent="pista/area_coracao"]
-position = Vector2(776, 11)
-scale = Vector2(0.4, 0.36)
-texture = ExtResource("3_qmr0j")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pista/area_coracao"]
+position = Vector2(776.00006, 12)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_mpwkm")
+frame_progress = 0.56050265
+
+[node name="cdheart" type="Timer" parent="pista/area_coracao"]
 
 [node name="Home" type="TextureButton" parent="."]
 offset_left = 2.0
@@ -70,6 +120,23 @@ theme_override_colors/default_color = Color(0.014938173, 0.66257006, 3.85046e-07
 theme_override_fonts/normal_font = ExtResource("6_x2odi")
 theme_override_font_sizes/normal_font_size = 40
 text = "Bom trabalho!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 362.0
+offset_top = 142.0
+offset_right = 810.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("7_8at3q")
+theme_override_font_sizes/font_size = 17
+text = "Rápido, aperte espaço
+a cada barra vermelha
+que chegar no coração"
+label_settings = SubResource("LabelSettings_87x5k")
+horizontal_alignment = 1
+
+[node name="ambulancia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_87x5k")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="pista/area_coracao" to="." method="_on_area_coracao_area_entered"]
